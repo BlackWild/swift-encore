@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Byte Arrays
 
 // Generate a hex string from any sequence of bytes. This is in particular useful for converting a hash digest to hex string in the `Crypto` package.
-extension Sequence where Self.Element == UInt8 {
+public extension Sequence where Self.Element == UInt8 {
     /// The lowercase hex string of 8-bit unsigned integers of this sequence.
     var hexString: String {
         return reduce(into: "") { accumulator, byte in
@@ -21,14 +21,14 @@ extension Sequence where Self.Element == UInt8 {
 
 // MARK: - Time + Date
 
-extension Date {
+public extension Date {
     /// The operator calculating the distance of two `Date`s resulting into a `TimeInterval`.
     static func - (lhs: Date, rhs: Date) -> TimeInterval {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
 }
 
-extension TimeInterval {
+public extension TimeInterval {
     /// The minutes corresponding to this time interval.
     var minute: Double { self / 60 }
     /// The hours corresponding to this time interval.
