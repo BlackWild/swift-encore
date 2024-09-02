@@ -18,7 +18,7 @@ import SwiftUI
 /// ```
 /// where you can change `Date.distantPast` to your **default** value.
 @available(iOS 13.0, *)
-func ?? <T: Sendable> (lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
+public func ?? <T: Sendable> (lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
     Binding(
         get: { lhs.wrappedValue ?? rhs },
         set: { lhs.wrappedValue = $0 }

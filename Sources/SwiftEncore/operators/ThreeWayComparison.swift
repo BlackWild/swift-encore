@@ -9,20 +9,20 @@
 
 infix operator <=>: ComparisonPrecedence
 
-func <=> <T: Comparable> (lhs: T, rhs: T) -> ThreeWayComparisonResult {
+public func <=> <T: Comparable> (lhs: T, rhs: T) -> ThreeWayComparisonResult {
     if lhs < rhs { return .lhsLower }
     else if lhs > rhs { return .lhsGreater }
     else { return .lhsInclusive }
 }
 
-func <=> <T: Comparable> (lhs: T, rhs: ClosedRange<T>) -> ThreeWayComparisonResult {
+public func <=> <T: Comparable> (lhs: T, rhs: ClosedRange<T>) -> ThreeWayComparisonResult {
     if lhs < rhs.lowerBound { return .lhsLower }
     else if lhs > rhs.upperBound { return .lhsGreater }
     else { return .lhsInclusive }
 }
 
 /// The result of a three-way comparison
-enum ThreeWayComparisonResult: Int {
+public enum ThreeWayComparisonResult: Int {
     /// The left-hand side is lower.
     case lhsLower = -1
     /// The left-hand side is either equal to the right-hand side, or it is included in the right-hand side in case of comparing ranges of items.
