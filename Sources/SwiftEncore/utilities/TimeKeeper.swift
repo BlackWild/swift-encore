@@ -27,7 +27,7 @@ public final class TimeKeeper {
     private var timer: Timer?
     private let timeInterval: TimeInterval
     
-    init(timeInterval: TimeInterval = 0.9999) {
+    public init(timeInterval: TimeInterval = 0.9999) {
         self.timeInterval = timeInterval
         self.startTimer()
     }
