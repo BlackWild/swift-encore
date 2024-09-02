@@ -18,15 +18,14 @@ public struct CodableColor: Codable, Sendable {
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public extension CodableColor {
     var color: Color {
         Color(red: red, green: green, blue: blue, opacity: opacity)
     }
 }
 
-
-@available(iOS 17.0, *)
+@available(iOS 17.0, macOS 14.0,*)
 public extension CodableColor {
     init(fromColor color: Color, in environment: EnvironmentValues = .init()) {
         let resolved = color.resolve(in: environment)

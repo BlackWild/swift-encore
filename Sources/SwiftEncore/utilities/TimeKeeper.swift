@@ -14,13 +14,13 @@ import SwiftUI
 // MARK: - TimeKeeper
 
 /// The `TimeKeeper` keeps track of time by exposing an `Observable` variable `currentTime`. The `currentTime` is updated in intervals and when you use it in an observed environment like the `body` of a SwiftUI `View`, the view will be updated on change of the `currentTime` variable.
-@available(iOS 17.0, *)
+@available(iOS 17.0, macOS 14.0, *)
 @Observable
 public final class TimeKeeper {
     
     // MARK: - Exposed properties
     
-    private(set) var currentTime: Date = .now
+    public private(set) var currentTime: Date = .now
     
     // MARK: - Core properties
     

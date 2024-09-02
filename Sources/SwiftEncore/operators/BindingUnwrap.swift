@@ -17,7 +17,7 @@ import SwiftUI
 /// DatePicker(selection: $selectedDate ?? Date.distantPast)
 /// ```
 /// where you can change `Date.distantPast` to your **default** value.
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public func ?? <T: Sendable> (lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
     Binding(
         get: { lhs.wrappedValue ?? rhs },
